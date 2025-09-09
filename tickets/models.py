@@ -29,6 +29,7 @@ class Ticket(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
+    solution = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} ({self.status}, {self.category}, {self.priority})"
